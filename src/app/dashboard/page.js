@@ -19,6 +19,10 @@ export default async function DashboardPage() {
     .eq("id", user.id)
     .single();
 
+  if (profile && !profile.onboarded) {
+    redirect("/onboarding");
+  }
+
   if (profile?.role === "client") {
     redirect("/workout");
   }

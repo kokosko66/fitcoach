@@ -7,6 +7,7 @@ create table profiles (
   role text not null check (role in ('coach', 'client')),
   full_name text not null,
   avatar_url text,
+  onboarded boolean default false not null,
   created_at timestamptz default now() not null
 );
 
